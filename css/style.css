@@ -6,7 +6,7 @@ main section {
     margin: 0% 3% 0% 3%;
 }
 :root {
-    background-image: url("/images/WUWBLR.png");
+    background-image: url(../images/WUWBLR.png);
     background-size: cover;
     width: 100%;
     background-repeat: no-repeat;
