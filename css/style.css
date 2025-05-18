@@ -458,7 +458,7 @@ footer {
         scale: 0.5; opacity: 0;
     }
     to   {
-        scale: 1; opacity 1;
+        scale: 1; opacity: 1;
     }
 }
 .move {
@@ -842,7 +842,7 @@ footer {
 }
 /* Feedback page */
 .feedback {
-    background-image: url("/images/12.webp");
+    background-image: url(../images/12.webp);
     background-size: cover;
     width: 100%;
     background-repeat: no-repeat;
