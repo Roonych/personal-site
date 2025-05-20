@@ -7,6 +7,7 @@
     <link rel="icon" type="image/x-icon" href="images/fav.png">
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="script.js"></script>
     <meta name="viewport">
     <meta name="color-scheme" content="dark">
 
@@ -32,6 +33,12 @@
         <a class="moon-container dsk"><img class="moon click" src="icons/moon-w.svg" title="Change color shceme"></a>
     </header>
 
+    <!-- Open Full Images Container -->
+    <div id="imageModal" class="modal" onclick="handleModalClick(event)">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
     <main id="review">
         <section class="review-title-bg shadow">
             <img class="image rb-top" src="images/Cyberpunk.webp">
@@ -45,13 +52,13 @@
         <div class="review-page rb">
             <p class="text">Дополнение <a href="">Phantom Liberty</a> для <a href="">Cyberpunk 2077</a> вышло настолько отличным, что некоторые называли его <a href="">лучшей игрой года</a>. Если верить гейм-директору <u>Габриэлю Аматанджело</u> (Gabriel Amatangelo), команда может провернуть нечто подобное и с продолжением «Киберпанка». Об этом и многом другом специалист <a href="">рассказал</a> журналисту Game File <u>Стивену Тотило</u> (Stephen Totilo).</p>
             <h1 class="title" >Доработка CP2077 и создание «Призрачной свободы»</h1>
-            <span class="review-image-v shadow text move"><img class="image click rb" src="images/Cyberpunk-Edgerunners-Rebecca.webp"><p><b>Ребекка</b> - один из ключевых персонажей аниме ответвления Киберпанка: Cyberpunk Edgerunners</p></span>
+            <span class="review-image-v shadow text move"><img class="image click rb" src="images/Cyberpunk-Edgerunners-Rebecca.webp" onclick="openFullImage(this)"><p><b>Ребекка</b> - один из ключевых персонажей аниме ответвления Киберпанка: Cyberpunk Edgerunners</p></span>
             <li class="text">Коней на переправе не меняют, но Cyberpunk 2077 была в таком плачевном состоянии, что этой пословицей можно было пренебречь. Когда <u>Аматанджело</u> возглавил производство игры в 2021 году, первым делом он дал коллективу больше свободы. «Таким образом я хотел развязать всем руки, чтобы команда начала творить, а не переживать из-за того, что руководство проверяет каждую мелочь», — поделился гейм-директор.</li>
                 <li class="text">По словам <u>Аматанджело</u>, к разработке <b>Phantom Liberty</b> студия подошла как к созданию полноценного сиквела. Многое было пересмотрено: рабочий цикл, функционирование города и Ви с точки зрения игрока и так далее.</li>
                 <h1 class="title" style="color: yellow; text-align: left;">||Предыстория Ви зависит от выбора игрока во время создания персонажа во вкладке «Прошлое Ви».</h1>
                 <p class="text">Также руководитель хотел ещё сильнее связать компоненты открытого мира между собой. В случае с DLC требовалось переплести разного рода заказы и побочные миссии с основной веткой квестов, которая в <b>«Призрачной свободе»</b> вертится вокруг биочипа. <i>«Мы не хотели, чтобы между наёмником Ви и Ви, который возится с биочипом, появилось разграничение»</i>, — уточнил <u>Аматанджело.</u></p>
                 <li class="text">На пользу дополнению пошли и так называемые междисциплинарные команды. Специалисты со знаниями в нескольких сферах не теряли время на коммуникацию и ожидание результата. «Если над сценой трудится группа сразу с несколькими умениями, они могут делать всё одновременно. Это очень помогает», — поделился руководитель, но подчеркнул, что это не ультимативное решение, так как подобные отряды могут быть не синхронизированы с остальными разработчиками.</p>
-            <span class="review-image-full move"><img class="image click shadow rb" src="images/Cyberpunk_photomode.webp"><p>Вид на один из районов Найт-Сити</p></span>
+            <span class="review-image-full move"><img class="image click shadow rb" src="images/Cyberpunk_photomode.webp" onclick="openFullImage(this)"><p>Вид на один из районов Найт-Сити</p></span>
             <h1 class="title">Восстание из мёртвых</h1>
             <li class="text">В сентябре 2023-го <b>CD Projekt RED</b> <a href="">дала ясно понять</a>, что после апдейта 2.0 больше не стоит ждать крупных изменений в «Киберпанке». Однако позже случился <a href="">патч 2.1</a>, который внедрил систему метро и переносное радио, а затем <a href="">в обновлении поменьше</a> разрешили перекрашивать «Рейфилды».</li>
             <li class="text">Как пояснил <u>Аматанджело</u>, коллектив нашёл способ внедрять подобные фичи, чтобы это не отвлекало сотрудников от более важных задач. Мол, если желаемую добавку легко встроить и не попортить при этом всё остальное, гейм-директор даёт на это добро.</li>

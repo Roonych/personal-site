@@ -7,7 +7,7 @@
     <link rel="icon" type="image/x-icon" href="images/fav.png">
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/style.css">
-    <script type="text/javascript" src="js.js"></script>
+    <script type="text/javascript" src="script.js"></script>
     <meta name="viewport">
     <meta name="color-scheme" content="dark">
 
@@ -43,68 +43,74 @@
         <section class="content-page">
 
             <div class="arts-safe-zone move">
-                <div class="arts-card rb click shadow" onclick="getPics()">
-                    <img class="image" src="images/my/Reverse lowers.webp">
+                <div class="arts-card rb click shadow">
+                    <img class="image" src="images/my/Reverse lowers.webp" onclick="openFullImage(this)">
                     <div class="abs content-title"></div>
                 </div>
             </div>
 
             <div class="arts-safe-zone move">
                 <div class="arts-card click rb shadow">
-                    <img class="image" src="images/my/CrimsonComic_notvlines_anderoon.webp">
+                    <img class="image" src="images/my/CrimsonComic_notvlines_anderoon.webp" onclick="openFullImage(this)">
                     <div class="abs content-title"></div>
                 </div>
             </div>
 
             <div class="arts-safe-zone move">
                 <div class="arts-card click rb shadow">
-                    <img class="image" src="images/my/D_33.webp" alt="">
+                    <img class="image" src="images/my/D_33.webp" onclick="openFullImage(this)" alt="">
                     <div class="abs content-title"></div>
                 </div>
             </div>
 
             <div class="arts-safe-zone move">
                 <div class="arts-card click rb shadow">
-                    <img class="image" src="images/my/aga.webp">
+                    <img class="image" src="images/my/aga.webp" onclick="openFullImage(this)">
                     <div class="abs content-title"></div>
                 </div>
             </div>
 
             <div class="arts-safe-zone move">
                 <div class="arts-card click rb shadow">
-                    <img class="image" src="images/my/firelamp.webp" alt="">
+                    <img class="image" src="images/my/firelamp.webp" onclick="openFullImage(this)" alt="">
                     <div class="abs content-title"></div>
                 </div>
             </div>
 
             <div class="arts-safe-zone move">
                 <div class="arts-card click rb shadow">
-                    <img class="image" src="images/my/BreakingHeart Hromatic.webp" alt="">
+                    <img class="image" src="images/my/BreakingHeart Hromatic.webp" onclick="openFullImage(this)" alt="">
                     <div class="abs content-title"></div>
                 </div>
             </div>
 
             <div class="arts-safe-zone move">
                 <div class="arts-card click rb shadow">
-                    <img class="image" src="images/my/PHeart.webp" alt="">
+                    <img class="image" src="images/my/PHeart.webp" onclick="openFullImage(this)" alt="">
                     <div class="abs content-title"></div>
                 </div>
             </div>
 
             <div class="arts-safe-zone move">
                 <div class="arts-card click rb shadow">
-                    <img class="image" src="images/my/JustCHILL.webp" alt="">
+                    <img class="image" src="images/my/JustCHILL.webp" onclick="openFullImage(this)" alt="">
                     <div class="abs content-title"></div>
                 </div>
             </div>
 
             <div class="arts-safe-zone move">
                 <div class="arts-card click rb shadow">
-                    <img class="image" src="images/my/kto ya.webp" alt="">
+                    <img class="image" src="images/my/kto ya.webp" onclick="openFullImage(this)" alt="">
                     <div class="abs content-title"></div>
                 </div>
             </div>
             
+            <!-- Open Full Images Container -->
+            <div id="imageModal" class="modal" onclick="handleModalClick(event)">
+                <span class="close-btn" onclick="closeModal()">&times;</span>
+                <img class="modal-content" id="modalImage">
+            </div>
+
         </section>
 
         <section class="end-buttons">

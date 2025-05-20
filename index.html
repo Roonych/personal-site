@@ -6,6 +6,7 @@
         <link rel="icon" type="image/x-icon" href="images/fav.png">
         <meta charset="utf-8">
         <link rel="stylesheet" href="css/style.css">
+        <script type="text/javascript" src="script.js"></script>
         <meta name="viewport">
         <meta name="color-scheme" content="dark">
 
@@ -65,7 +66,7 @@
                             <div class="type-videos rb"></div>
                             <p class="text">Видео</p>
                         </div>
-                        <a href="https://www.youtube.com/watch?v=u74vRgXzClk"><video class="image" autoplay loop muted src="images/my/Loading.mp4"></video></a>
+                        <a href="https://www.youtube.com/@anderoon"><video class="image" autoplay loop muted src="images/my/Loading.mp4"></video></a>
                         <div class="abs frametitle blur rb-top">
                             <h1 class="title">Новое видео!</h1>
                         </div>
@@ -73,35 +74,35 @@
 
                     <div class="frame-4 rb click">
                         <div class="image-box">
-                            <img class="image" src="images/my/Reverse lowers.webp">
+                            <img class="image" src="images/my/Reverse lowers.webp" onclick="openFullImage(this)">
                             <div class="abs image-title blur rb-top-right">
                                 <h1 class="text">Reverse</h1>
                             </div>
                         </div>
 
                         <div class="image-box">
-                            <img class="image" src="images/my/firelamp.webp">
+                            <img class="image" src="images/my/firelamp.webp" onclick="openFullImage(this)">
                             <div class="abs image-title blur rb-top">
                                 <h1 class="text">FireLamp</h1>
                             </div>
                         </div>
 
                         <div class="image-box">
-                            <img class="image" src="images/my/D_33.webp">
+                            <img class="image" src="images/my/D_33.webp" onclick="openFullImage(this)">
                             <div class="abs image-title blur rb-top">
                                 <h1 class="text">Distorted</h1>
                             </div>
                         </div>
 
                         <div class="image-box dsk">
-                            <img class="image" src="images/my/CrimsonComic_notvlines_anderoon.webp">
+                            <img class="image" src="images/my/CrimsonComic_notvlines_anderoon.webp" onclick="openFullImage(this)">
                             <div class="abs image-title blur rb-top">
                                 <h1 class="text">CrimsonComic</h1>
                             </div>
                         </div>
 
                         <div class="image-box dsk">
-                            <img class="image" src="images/my/ChillF4_min.webp">
+                            <img class="image" src="images/my/ChillF4_min.webp" onclick="openFullImage(this)">
                             <div class="abs image-title blur rb-top-left">
                                 <h1 class="text">Twitch Boy</h1>
                             </div>
@@ -110,6 +111,12 @@
                         <div class="abs frametitle blur rb-top">
                             <h1 class="title">Обновления</h1>
                         </div>
+                    </div>
+
+                    <!-- Open Full Images Container -->
+                    <div id="imageModal" class="modal" onclick="handleModalClick(event)">
+                        <span class="close-btn" onclick="closeModal()">&times;</span>
+                        <img class="modal-content" id="modalImage">
                     </div>
 
             </section>
@@ -123,9 +130,9 @@
                     </ul>
                 </div>
                 <div>
-                    <img class="picture1 abs rb scroll1 shadow dsk" src="images/my/Heart AnDeRoOn_.webp">
-                    <img class="picture2 abs rb scroll2 shadow dsk" src="images/my/BreakingHeart Hromatic.webp">
-                    <img class="picture3 abs rb scroll3 shadow dsk" src="images/my/PHeart.webp">
+                    <img class="picture1 abs rb scroll1 shadow click dsk" src="images/my/Heart AnDeRoOn_.webp" onclick="openFullImage(this)">
+                    <img class="picture2 abs rb scroll2 shadow click dsk" src="images/my/BreakingHeart Hromatic.webp" onclick="openFullImage(this)">
+                    <img class="picture3 abs rb scroll3 shadow click dsk" src="images/my/PHeart.webp" onclick="openFullImage(this)">
                 </div>
 
             </section>
@@ -155,7 +162,7 @@
                 <h1 class="title fade-in">А ещё я стримлю на Twitch UwU</h1>
                 <div id="tw-block-2">
                     <a href="https://www.twitch.tv/ianderoon"><video class="tw-video rb click" autoplay loop muted src="images/CS Short_H.265.mp4"></video></a>
-                    <p class="abs text move-inv abs-center">Ламповый контент, приятная атмосфера и <br> доброжелательный чат, всё что нужно для <br> хорошего вечерка</p></div>
+                    <p class="abs title move-inv abs-center">Ламповый контент, приятная атмосфера и <br> доброжелательный чат, всё что нужно для <br> хорошего вечерка</p></div>
 
             </section>
 
