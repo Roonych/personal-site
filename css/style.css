@@ -159,7 +159,7 @@ header {
         transform: translateY(5px) translateX(-5px);
     }
 }
-.frame-1, .frame-2 {
+.frame-1 {
     &:hover .image {
         scale: 1.2;
     }
@@ -179,7 +179,7 @@ header {
     width: 100%;
     grid-area: frame-4;
 }
-.frame-3, .frame-4 {
+.frame-2, .frame-3, .frame-4 {
     &:hover .frametitle {
         transform: translateY(100px);
         max-height: 0%;
@@ -559,7 +559,7 @@ footer {
 .content-page {
     display: grid;
     justify-content: space-between;
-    grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(30vh, 1fr));
     column-gap: 5vh;
     margin: 5vh 10vw;
     animation: move-fr 500ms ease-in-out;
@@ -576,7 +576,7 @@ footer {
     }
 }
 .content-card {
-    height: 25vh;
+    height: 25vh;;
     &:hover .content-title {
         height: 15%;
     }
@@ -647,6 +647,10 @@ footer {
     background-color: #00000088;
     padding-right: 5vw;
     animation: move-fr 500ms ease-in-out;
+    div {
+        position: relative;
+        z-index: 0;
+    }
 }
 .reviews-frame .title {
     text-align: left;
@@ -654,6 +658,23 @@ footer {
 }
 .reviews-frame .image {
     height: 40vh;
+    &:hover {
+        scale: 1.2;
+        opacity: 0.8;
+    }
+}
+.reviews-frame a {
+    color: #E69F77;
+    text-decoration: none;
+    transition: 300ms;
+    &:hover {
+        text-decoration: underline;
+        word-spacing: 0.2vmin;
+    }
+}
+.reviews-frame h1 {
+    color: aqua;
+    text-decoration: none;
 }
 /* Review Page */
 #review {
@@ -668,13 +689,15 @@ footer {
         left: 1vw; bottom: 1vh;
         right: auto;
         position: fixed;
+        height: 75px;
+        width: 250px;
     }
 }
 .review-page {
     background-color: #00000080;
     margin: 0 10vw 0 10vw;
     padding: 2vh 10vw 10vh 10vw;
-    line-height: 3.5vh;
+    line-height: 35px;
     text-align: justify;
     text-wrap: 1vw;
     word-break: break-word;
@@ -694,6 +717,7 @@ footer {
     color: aqua;
     text-decoration: none;
 }
+
 .quote {
     background-color: #00acfe20;
     padding: 3vmin;
@@ -839,7 +863,7 @@ footer {
 }
 /* Feedback page */
 .feedback {
-    background-image: url(../images/12.webp);
+    background-image: url(../images/my/feedback.avif);
     background-size: cover;
     width: 100%;
     background-repeat: no-repeat;
@@ -862,6 +886,20 @@ footer {
     background-color: #00000020;
     filter: blur(10px);
     transform: translateX(-10px);
+}
+.feedback-blur, .feedback-shadow {
+    top: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    clip-path: polygon(55% 0, 100% 0, 100% 100%, 40% 100%);
+}
+.feedback-girl {
+    top: 0;
+    z-index: -1;
+    height: 100%;
+    width: auto;
+    transform: translateX(200px);
 }
 .feedback-container {
     display: flex;
@@ -897,6 +935,13 @@ footer {
     height: 40vh;
     box-sizing: border-box;
 }
+#ff-compose {
+        float: right;
+        align-self: center;
+        margin-top: 10vh;
+        margin-right: 0vw;
+        width: 50vw
+    }
 /* Adaptive */
 @media screen and (max-width: 1227px) {
     .dsk {
@@ -988,13 +1033,13 @@ footer {
         height: 15vh;
     }
     .content-safe-zone, .arts-safe-zone {
-        height: 25rem;
+        height: 28vh;
     }
     .content-card, .arts-card {
         width: 100%;
     }
     .content-card {
-        height: 22rem;
+        height: 25vh;
     }
     .header-line {
         margin-top: 2vh;
@@ -1019,6 +1064,9 @@ footer {
     }
     .reviews-frame .image {
         height: 15vh;
+    }
+    .reviews-frame button {
+        height: 5vh;
     }
     .requests-block {
         grid-template-columns: none;
@@ -1068,7 +1116,7 @@ footer {
     }
     .review-page {
         margin: 0;
-        line-height: 3vh;
+        line-height: 30px;
         text-align: left;
         h1 {
             font-size: 4vmin;
@@ -1088,6 +1136,12 @@ footer {
     .feedback {
         overflow: visible;
         height: 100%;
+    }
+    #ff-compose {
+        float: none;
+        align-self: center;
+        margin-top: 10vh;
+        width: 100vw;
     }
 }
 
