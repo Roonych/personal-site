@@ -33,7 +33,7 @@
         <a class="moon-container dsk"><img class="moon click" src="icons/moon-w.svg" title="Луна прост"></a>
     </header>
 
-    <main>
+    <main id="arts-page">
 
         <section class="page-title-bg rb shadow">
             <img class="image" src="images/my/Wallpaper.webp">
@@ -43,86 +43,80 @@
         <section class="content-page">
 
             <div class="arts-safe-zone move">
-                <div class="arts-card rb click shadow">
-                    <img class="image" src="images/my/2024 not crying light.avif" onclick="openFullImage(this)">
+                <div class="arts-card rb click shadow" ontouchstart="">
+                    <img class="image" src="images/my/2024 not crying light.avif" onclick="openFullImage(this)" data-caption="not crying (light)">
                     <div class="abs content-title"></div>
                 </div>
             </div>
 
             <div class="arts-safe-zone move">
-                <div class="arts-card rb click shadow">
-                    <img class="image" src="images/my/Reverse lowers.webp" onclick="openFullImage(this)">
+                <div class="arts-card rb click shadow" ontouchstart="">
+                    <img class="image" src="images/my/Reverse lowers.webp" onclick="openFullImage(this)" data-caption="Reverse">
                     <div class="abs content-title"></div>
                 </div>
             </div>
 
             <div class="arts-safe-zone move">
-                <div class="arts-card click rb shadow">
-                    <img class="image" src="images/my/CrimsonComic_notvlines_anderoon.webp" onclick="openFullImage(this)">
+                <div class="arts-card click rb shadow"ontouchstart="">
+                    <img class="image" src="images/my/CrimsonComic_notvlines_anderoon.webp" onclick="openFullImage(this)" data-caption="CrimsonComic">
                     <div class="abs content-title"></div>
                 </div>
             </div>
 
             <div class="arts-safe-zone move">
-                <div class="arts-card click rb shadow">
-                    <img class="image" src="images/my/D_33.webp" onclick="openFullImage(this)" alt="">
+                <div class="arts-card click rb shadow" ontouchstart="">
+                    <img class="image" src="images/my/D_33.webp" onclick="openFullImage(this)" data-caption="Distorted">
                     <div class="abs content-title"></div>
                 </div>
             </div>
 
             <div class="arts-safe-zone move">
-                <div class="arts-card rb click shadow">
-                    <img class="image" src="images/my/ChillF4_min.webp" onclick="openFullImage(this)">
+                <div class="arts-card rb click shadow" ontouchstart="">
+                    <img class="image" src="images/my/ChillF4_min.webp" onclick="openFullImage(this)" data-caption="Twitch Boy">
                     <div class="abs content-title"></div>
                 </div>
             </div>
 
             <div class="arts-safe-zone move">
-                <div class="arts-card click rb shadow">
-                    <img class="image" src="images/my/aga.webp" onclick="openFullImage(this)">
+                <div class="arts-card click rb shadow" ontouchstart="">
+                    <img class="image" src="images/my/aga.webp" onclick="openFullImage(this)" data-caption="UwU">
                     <div class="abs content-title"></div>
                 </div>
             </div>
 
             <div class="arts-safe-zone move">
-                <div class="arts-card click rb shadow">
-                    <img class="image" src="images/my/firelamp.webp" onclick="openFullImage(this)" alt="">
+                <div class="arts-card click rb shadow" ontouchstart="">
+                    <img class="image" src="images/my/firelamp.webp" onclick="openFullImage(this)" data-caption="firelamp">
                     <div class="abs content-title"></div>
                 </div>
             </div>
 
             <div class="arts-safe-zone move">
-                <div class="arts-card click rb shadow">
-                    <img class="image" src="images/my/BreakingHeart Hromatic.webp" onclick="openFullImage(this)" alt="">
+                <div class="arts-card click rb shadow" ontouchstart="">
+                    <img class="image" src="images/my/BreakingHeart Hromatic.webp" onclick="openFullImage(this)" data-caption="BreakingHeart">
                     <div class="abs content-title"></div>
                 </div>
             </div>
 
             <div class="arts-safe-zone move">
-                <div class="arts-card click rb shadow">
-                    <img class="image" src="images/my/PHeart.webp" onclick="openFullImage(this)" alt="">
+                <div class="arts-card click rb shadow" ontouchstart="">
+                    <img class="image" src="images/my/PHeart.webp" onclick="openFullImage(this)" data-caption="PixelHeart">
                     <div class="abs content-title"></div>
                 </div>
             </div>
 
             <div class="arts-safe-zone move">
-                <div class="arts-card click rb shadow">
-                    <img class="image" src="images/my/JustCHILL.webp" onclick="openFullImage(this)" alt="">
+                <div class="arts-card click rb shadow" ontouchstart="">
+                    <img class="image" src="images/my/JustCHILL.webp" onclick="openFullImage(this)" data-caption="JustCHILL">
                     <div class="abs content-title"></div>
                 </div>
             </div>
 
             <div class="arts-safe-zone move">
-                <div class="arts-card click rb shadow">
-                    <img class="image" src="images/my/kto ya.webp" onclick="openFullImage(this)" alt="">
+                <div class="arts-card click rb shadow" ontouchstart="">
+                    <img class="image" src="images/my/kto ya.webp" onclick="openFullImage(this)" data-caption="kto ja">
                     <div class="abs content-title"></div>
                 </div>
-            </div>
-            
-            <!-- Open Full Images Container -->
-            <div id="imageModal" class="modal" onclick="handleModalClick(event)">
-                <span class="close-btn" onclick="closeModal()">&times;</span>
-                <img class="modal-content" id="modalImage">
             </div>
 
         </section>
@@ -148,5 +142,12 @@
     </footer>
 
 </body>
+
+<!-- Open Full Images Container -->
+ <div id="imageModal" class="modal" onclick="handleModalClick(event)">
+    <span class="close-btn" onclick="closeModal()">&times;</span>
+    <img class="modal-content rb" id="modalImage">
+    <div class="image-caption title" id="imageCaption"></div>
+</div>
 
 </html>

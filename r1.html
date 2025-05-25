@@ -3,7 +3,7 @@
 <html>
 
 <head>
-    <title>Почему Cyberpunk 2077 всё же стал культовым | Reviews</title>
+    <title>Думерская жизнь в хрущёвке | Reviews</title>
     <link rel="icon" type="image/x-icon" href="images/my/fav.avif">
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/style.css">
@@ -33,24 +33,18 @@
         <a class="moon-container dsk"><img class="moon click" src="icons/moon-w.svg" title="Луна прост"></a>
     </header>
 
-    <!-- Open Full Images Container -->
-    <div id="imageModal" class="modal" onclick="handleModalClick(event)">
-        <span class="close-btn" onclick="closeModal()">&times;</span>
-        <img class="modal-content" id="modalImage">
-    </div>
-
     <main id="review">
         <section class="review-title-bg shadow">
             <img class="image rb-top" src="images/Virai.avif">
             <div class="abs page-title">Думерская жизнь в хрущёвке</div>
         </section>
 
-        <a href="javascript:window.history.back();"><button class="abs infobutton blur rb title click"><-- Назад
+        <a href="javascript:window.history.back();"><button class="abs infobutton blur rb text click"><--Назад
             <div class="infobuttonbg abs"></div>
         </button></a>
 
         <div class="review-page rb">
-            <span class="review-image-v text move"><img class="image shadow click rb" src="images/ViraiQR.avif" onclick="openFullImage(this)"><p><b>Вирай</b> приглашает тебя перейти по QR коду на страничку игры <3</p></span>
+            <span class="review-image-v text move"><img class="image shadow click rb" src="images/ViraiQR.avif" onclick="openFullImage(this)" data-caption="Вирай приглашает тебя перейти по QR коду на страничку игры <3"><p><b>Вирай</b> приглашает тебя перейти по QR коду на страничку игры <3</p></span>
             <p class="text">Вышло демо новой игры от соавтора <a href="https://store.steampowered.com/app/2901520">"Альтушки для Скуфа"</a> - художницы <u>Рикани</u>, и её студии анимации. Но в этот раз это не визуальная новелла выросшая из мема, а психологическая хоррор RPG с глубоким сюжетом. Над идеей которой <a href="https://www.rik.studio">Rik Animation</a> работали не один год, выпуская посты и ролики в своих социальных сетях. Нам предстоит узнать историю девочки <a>Хичи</a>, чья реальная жизнь совсем потеряла смысл. И она с удовольствием забывает о ней, погружаясь в виртуальный мир <a>VITA</a> в амплуа той самой весёлой витуберши <a>Вирай.</a></p>
             <p class="text">Внутри этой запутанной истории нас ждут: Разнообразный визуальный стиль, <a>внутренние переживания Хичи на тему тленности жизни,</a> дивный виртуальный мир Вирай, <a></a>совсем не дивный мир Хичи,</a> саундтрек в жанре постпанк и множество концовок.</p>
             <p class="text"><b>Получится ли у вас помочь Хиче выбраться из её жизненной рутины и обрести счастье? Всё в ваших руках!</b></p>
@@ -65,5 +59,12 @@
         <p>by anderoon, originally for Курсовая работа 2024</p>
     </footer>
 </body>
+
+<!-- Open Full Images Container -->
+    <div id="imageModal" class="modal" onclick="handleModalClick(event)">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <img class="modal-content rb" id="modalImage">
+        <div class="image-caption title" id="imageCaption"></div>
+    </div>
 
 </html>

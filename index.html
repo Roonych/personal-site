@@ -36,7 +36,7 @@
 
             <section id="hub">
 
-                    <div class="frame-1 rb click"><a href="r1.html">
+                    <div class="frame-1 rb click" ontouchstart=""><a href="r1.html">
                         <div class="type abs rb blur">
                             <div class="type-reviews rb"></div>
                             <p class="text">Обзор</p>
@@ -54,7 +54,7 @@
                             <div class="type-videos rb"></div>
                             <p class="text">Видео</p>
                         </div>
-                        <a href="https://www.youtube.com/@anderoon"><video class="image" autoplay loop muted src="images/Crypt Custodian Short_H.265.mp4"></video></a>
+                        <a href="https://www.youtube.com/@anderoon"><video class="image" autoplay loop muted playsinline src="images/Crypt Custodian Short_H.265.mp4"></video></a>
                         <div class="abs frametitle blur rb-top">
                             <h1 class="title">Новое видео!</h1>
                         </div>
@@ -65,7 +65,7 @@
                             <div class="type-videos rb"></div>
                             <p class="text">Видео</p>
                         </div>
-                        <a href="https://www.youtube.com/@anderoon"><video class="image" autoplay loop muted src="images/Lethal Company 2_H.265.mp4"></video></a>
+                        <a href="https://www.youtube.com/@anderoon"><video class="image" autoplay loop muted playsinline src="images/Lethal Company 2_H.265.mp4"></video></a>
                         <div class="abs frametitle blur rb-top">
                             <h1 class="title">Новое видео!</h1>
                         </div>
@@ -73,36 +73,36 @@
 
                     <div class="frame-4 rb click">
 
-                        <div class="image-box">
-                            <img class="image" src="images/my/2024 not crying light.avif" onclick="openFullImage(this)">
+                        <div class="image-box" ontouchstart="">
+                            <img class="image" src="images/my/2024 not crying light.avif" onclick="openFullImage(this)" data-caption="not crying (light)">
                             <div class="abs image-title blur rb-top-right">
                                 <h1 class="text">not crying</h1>
                             </div>
                         </div>
 
-                        <div class="image-box">
-                            <img class="image" src="images/my/Reverse lowers.webp" onclick="openFullImage(this)">
+                        <div class="image-box" ontouchstart="">
+                            <img class="image" src="images/my/Reverse lowers.webp" onclick="openFullImage(this)" data-caption="Reverse">
                             <div class="abs image-title blur rb-top">
                                 <h1 class="text">Reverse</h1>
                             </div>
                         </div>
 
-                        <div class="image-box">
-                            <img class="image" src="images/my/CrimsonComic_notvlines_anderoon.webp" onclick="openFullImage(this)">
+                        <div class="image-box" ontouchstart="">
+                            <img class="image" src="images/my/CrimsonComic_notvlines_anderoon.webp" onclick="openFullImage(this)" data-caption="CrimsonComic">
                             <div class="abs image-title blur rb-top">
                                 <h1 class="text">CrimsonComic</h1>
                             </div>
                         </div>
 
                         <div class="image-box dsk">
-                            <img class="image" src="images/my/D_33.webp" onclick="openFullImage(this)">
+                            <img class="image" src="images/my/D_33.webp" onclick="openFullImage(this)" data-caption="Distorted">
                             <div class="abs image-title blur rb-top">
                                 <h1 class="text">Distorted</h1>
                             </div>
                         </div>
 
                         <div class="image-box dsk">
-                            <img class="image" src="images/my/ChillF4_min.webp" onclick="openFullImage(this)">
+                            <img class="image" src="images/my/ChillF4_min.webp" onclick="openFullImage(this)" data-caption="Twitch Boy">
                             <div class="abs image-title blur rb-top-left">
                                 <h1 class="text">Twitch Boy</h1>
                             </div>
@@ -112,12 +112,6 @@
                             <h1 class="title">Обновления</h1>
                         </div>
 
-                    </div>
-
-                    <!-- Open Full Images Container -->
-                    <div id="imageModal" class="modal" onclick="handleModalClick(event)">
-                        <span class="close-btn" onclick="closeModal()">&times;</span>
-                        <img class="modal-content" id="modalImage">
                     </div>
 
             </section>
@@ -131,9 +125,9 @@
                     </ul>
                 </div>
                 <div>
-                    <img class="picture1 abs rb scroll1 shadow click dsk" src="images/my/Heart AnDeRoOn_.webp" onclick="openFullImage(this)">
-                    <img class="picture2 abs rb scroll2 shadow click dsk" src="images/my/BreakingHeart Hromatic.webp" onclick="openFullImage(this)">
-                    <img class="picture3 abs rb scroll3 shadow click dsk" src="images/my/PHeart.webp" onclick="openFullImage(this)">
+                    <img class="picture1 abs rb scroll1 shadow click dsk" src="images/my/Heart AnDeRoOn_.webp" onclick="openFullImage(this)" data-caption="Heart">
+                    <img class="picture2 abs rb scroll2 shadow click dsk" src="images/my/BreakingHeart Hromatic.webp" onclick="openFullImage(this)" data-caption="BreakingHeart">
+                    <img class="picture3 abs rb scroll3 shadow click dsk" src="images/my/PHeart.webp" onclick="openFullImage(this)" data-caption="PixelHeart">
                 </div>
 
             </section>
@@ -142,7 +136,7 @@
 
                 <div class="media scroll1">
                     <h1 class="title">Иногда делаю видео</h1>
-                        <a href="https://www.youtube.com/shorts/M-DSb1Hg9NY"><video class="videocropv rb click" autoplay loop muted src="images/Crypt Custodian Short_H.265.mp4"></a>
+                        <a href="https://www.youtube.com/shorts/M-DSb1Hg9NY"><video class="videocropv rb click" autoplay loop muted playsinline src="images/Crypt Custodian Short_H.265.mp4"></a>
                         </video>
                 </div>
 
@@ -150,11 +144,11 @@
                 
                 <div class="media2 scroll4">
                     <h1 class="title">Или монтажики на ютубчике</h1>
-                    <a href="https://youtu.be/mdLNkj5-kow?si=yXX0jTcEOkz-SyF7"><video class="videocroph rb click" autoplay loop muted src="images/Lethal Company 2_H.265.mp4"></a>
+                    <a href="https://youtu.be/mdLNkj5-kow?si=yXX0jTcEOkz-SyF7"><video class="videocroph rb click" autoplay loop muted playsinline src="images/Lethal Company 2_H.265.mp4"></a>
                     </video>
                 </div>
 
-                <h1 class="block-text yt-txt scroll1">Чаще всего получается делать смешные монтажики про совместную игру с моими друзьями. Хоть такого на ютубе и не мало, но почему бы и нет?</h1>
+                <h1 class="block-text yt-txt">Чаще всего получается делать смешные монтажики про совместную игру с моими друзьями. Хоть такого на ютубе и не мало, но почему бы и нет?</h1>
                 
             </section>
 
@@ -162,8 +156,8 @@
 
                 <h1 class="title fade-in">А ещё я порой стримлю на Twitch UwU</h1>
                 <div id="tw-block-2">
-                    <a href="https://www.twitch.tv/ianderoon"><video class="tw-video rb click" autoplay loop muted src="images/CS Short_H.265.mp4"></video></a>
-                    <p class="abs title move-inv abs-center">Ламповый контент, приятная атмосфера и <br> доброжелательный чат, всё что нужно для <br> хорошего вечерка</p></div>
+                    <a href="https://www.twitch.tv/ianderoon"><video class="tw-video rb click" autoplay loop muted playsinline src="images/CS Short_H.265.mp4"></video></a>
+                    <p class="abs title move-inv abs-center">Ламповый контент, приятная атмосфера и доброжелательный чат, всё что нужно для хорошего вечерка</p></div>
 
             </section>
 
@@ -178,7 +172,7 @@
                     <a href="https://www.youtube.com/@anderoon"><img class="icon click" src="icons/youtube.svg"></a>
                 </div>
 
-                <video class="videocroph rb" autoplay loop muted no src="images/my/Loading.mp4"></video>
+                <video class="videocroph rb" autoplay loop muted playsinline no src="images/my/Loading.mp4"></video>
                 <p class="title move">Если я тебя заинтересовал,<br>можешь мне написать >>></p>
                 
                 <a href="feedback.html">
@@ -195,4 +189,12 @@
         </footer>
 
     </body>
+
+<!-- Open Full Images Container -->
+ <div id="imageModal" class="modal" onclick="handleModalClick(event)">
+    <span class="close-btn" onclick="closeModal()">&times;</span>
+    <img class="modal-content rb" id="modalImage">
+    <div class="image-caption title" id="imageCaption"></div>
+</div>
+
 </html>

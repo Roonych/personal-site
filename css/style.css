@@ -12,9 +12,6 @@ main section {
     background-repeat: no-repeat;
    /* background-color: #373737; */
 }
-.feedback {
-    overflow: hidden;
-}
 /* Header */
 header {
     margin: 1% 2%;
@@ -359,6 +356,7 @@ header {
 #tw-block-2 {
     position: sticky;
     top: 25%;
+    max-width: 90vw;
     p {
         z-index: -1;
     }
@@ -384,7 +382,7 @@ header {
     justify-content: center;
 }
 .icon {
-    max-height: 5vh;
+    height: 5vh;
     filter: invert();
     padding: 0.2vw;
     transition: 300ms ease-in-out;
@@ -440,6 +438,7 @@ footer {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: regular;
     margin-top: 10vh;
+    width: 100%;
 }
 
 /* Animations */
@@ -567,13 +566,25 @@ footer {
 .content-card, .arts-card {
     width: 100%;
     position: relative;
-    transition: 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
     &:hover {
         scale: 1.2;
         height: 100%;
         width: 100%;
         box-shadow: #00000055 5px 5px 10px;
     }
+    & a {
+        text-decoration: none;
+    }
+}
+.arts-card {
+    transform-origin: center center;
+    z-index: 1;
+}
+.arts-card.touch-hover {
+    transform: scale(1.2);
+    box-shadow: #00000055 5px 5px 10px;
+    z-index: 10;
 }
 .content-card {
     height: 25vh;;
@@ -647,6 +658,7 @@ footer {
     background-color: #00000088;
     padding-right: 5vw;
     animation: move-fr 500ms ease-in-out;
+    overflow: hidden;
     div {
         position: relative;
         z-index: 0;
@@ -865,9 +877,7 @@ footer {
 .feedback {
     background-image: url(../images/my/feedback.avif);
     background-size: cover;
-    width: 100%;
     background-repeat: no-repeat;
-    height: 100%;
 }
 .feedback-blur, .feedback-shadow {
     top: 0;
@@ -896,20 +906,19 @@ footer {
 }
 .feedback-girl {
     top: 0;
-    z-index: -1;
+    z-index: 1;
     height: 100%;
     width: auto;
+    max-width: min-content;
     transform: translateX(200px);
+    overflow: hidden;
 }
 .feedback-container {
     display: flex;
     flex-direction: column;
-    margin-right: 5vw;
     float: right;
     align-items: center;
     animation: move-fr 500ms ease-in-out;
-    z-index: 1;
-    position: relative;
 }
 .feedback-info {
     display: grid;
@@ -936,12 +945,8 @@ footer {
     box-sizing: border-box;
 }
 #ff-compose {
-        float: right;
-        align-self: center;
-        margin-top: 10vh;
-        margin-right: 0vw;
-        width: 50vw
-    }
+        width: 50vw;
+}
 /* Adaptive */
 @media screen and (max-width: 1227px) {
     .dsk {
@@ -956,25 +961,48 @@ footer {
           "frame-4 frame-4";
     }
     #media-block {
-        grid-template-columns: repeat(1, 1fr);
-        grid-template-rows: repeat(4, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
         grid-template-areas:
-          "media"
-          "tk-txt"
-          "media2"
-          "yt-txt";
+          "media tk-txt"
+          "media2 media2"
+          "yt-txt yt-txt";
+          h1 {
+            font-size: 3vmin;
+          }
     }
+    #tw-block  {
+        h1, p {
+            line-height: 2.5vmax;
+            font-size: 2vmax;
+        }
+    }
+    @supports not (animation-timeline: view()) {
+        #tw-block  {
+        h1, p {
+            position: relative;
+        }
+    }
+    }
+    @keyframes move-inv {
+    from {
+        transform: translateY(0px);
+    }
+    to   {
+        transform: translateY(-20vh);
+    }
+}
     .scroll1, .scroll2, .scroll3, .scroll4 {animation: none}
-    .title, .text {
-        font-family:Arial, Helvetica, sans-serif;
-        color:azure;
-    }
     .title {
         font-weight: bold;
-        font-size: large;
+        font-size: 5vmin;
         text-align: center;
+        line-height: 2.5vh;
     }
     .text {
+        font-size: 3vmin;
+    }
+    #review .text {
         font-size: large;
     }
     #aboutmeblock {
@@ -989,20 +1017,27 @@ footer {
     .media {
         margin-bottom: 2vh;
     }
-    .media2 {
-        margin-bottom: -55vh;
-    }
     .tk-txt, .yt-txt {
         width: 100%;
     }
-    #hub .title {
-        line-height: 30px;
+    .tk-txt {
+        align-self: center;
+        text-align: left;
+        overflow: visible;
+    }
+    .yt-txt {
+        position: relative;
+        top: -100px;
+        margin: 0;
+    }
+    #hub .title, #hub .text {
+        text-align: center;
     }
     .videocropv {
         width: 100% ;
     }
     .header-logo {
-        font-size: large;
+        font-size: xx-large;
     }
     .header-line-bottom > div {
         display: flex;
@@ -1010,36 +1045,115 @@ footer {
         flex-direction: column;
         gap: 2vh;
     }
-    .feedback-blur {
-        clip-path: polygon(0% 0, 100% 0, 100% 100%, 0% 100%);
+    .feedback-girl {
+        top: 0;
+        z-index: -1;
+        height: 100%;
+        width: 100%;
+        max-width: min-content;
+        transform: translateX(0);
+        overflow: hidden;
+    }
+    .feedback-blur, .feedback-shadow {
+        clip-path: fill-box
     }
     .feedback-info {
         grid-template-columns: none;
         grid-template-rows: auto;
         grid-row-gap: 1vh;
     }
-    .feedback-container {
-        margin-top: 2vh;
-    }
     .feedback-textarea  {
         width: 90vw;
         height: 40vh;
     }
+    .feedback-container {
+        float: none;
+    }
     .content-page {
-        margin: 2vh 5vw 0 5vw;
+        grid-template-columns: repeat(auto-fill, minmax(40vw, 1fr));
+        column-gap: 2vh;
+        margin: 2vh 5vw 5vw;
+    }
+    #videos-page, #reviews-page {
+        & .content-page {
+            row-gap: calc(auto);
+        }
+        & .content-card {
+            height: 100%;
+            width: 100%;
+            position: relative;
+            transition: 300ms ease-in-out;
+            box-shadow: #00000055 5px 5px 10px;
+            &:hover {
+                scale: none;
+                height: none;
+            }
+        }
+    }
+    #videos-page {
+        & .content-safe-zone {
+            height: auto;
+            aspect-ratio: 16/9;
+        }
+    }
+    #reviews-page {
+        & .content-safe-zone {
+            height: 22vh;
+            width: 100%;
+            position: relative;
+            transition: 300ms ease-in-out;
+            box-shadow: #00000055 5px 5px 10px;
+            max-width: 100%;
+            border-radius: 2vmax;
+            overflow: hidden;
+            &:hover {
+                scale: none;
+                height: none;
+            }
+        }
+    }
+    #review {
+    .infobutton {
+        font-size: x-large;
+        width: max-content;
+        margin-left: 2vw;
+    }
+    }
+    #videos-page {
+        & .content-safe-zone {
+            aspect-ratio: 16/9;
+            margin-bottom: 2vh;
+    }
     }
     .page-title-bg, .review-title-bg {
         width: 90vw;
         height: 15vh;
     }
     .content-safe-zone, .arts-safe-zone {
-        height: 28vh;
+        height: calc(auto);
+        max-width: 100%;
+        border-radius: 2vmax;
+        overflow: hidden;
     }
     .content-card, .arts-card {
         width: 100%;
+        font-size: 2vmin;
     }
-    .content-card {
-        height: 25vh;
+    .content-card h1 {
+        font-size: 3vmin;
+        line-height: auto;
+    }
+    #arts-page .content-title {
+        width: 0%;
+        height: 0%;
+        background: none;
+    }
+    #reviews-page .content-title {
+        width: 100%;
+        height: 100%;
+    }
+    #reviews-page:hover .content-title {
+        height: 100%;
     }
     .header-line {
         margin-top: 2vh;
@@ -1063,7 +1177,7 @@ footer {
         font-size: 1.8vmin;
     }
     .reviews-frame .image {
-        height: 15vh;
+        height: 20vh;
     }
     .reviews-frame button {
         height: 5vh;
@@ -1089,6 +1203,7 @@ footer {
     }
     .nav-button-1, .nav-button-2, .nav-button-3, .nav-button-4, .nav-button-5, .nav-button-6, .nav-button-7 {
         width: auto;
+        padding: 0.5vh 3vw 0.5vh 3vw;
         font-size: 2.8vw;
         &:hover {
             scale: 1.2;
@@ -1103,16 +1218,6 @@ footer {
             scale: 1.2;
         }
     }
-    }
-    .feedback-text {
-        width: 70vw;
-    }
-    .feedback-text, .feedback-textarea  {
-        font-size: 5vmin;
-        text-align: center;
-    }
-    .feedback-info .title {
-        font-size: 5vmin;
     }
     .review-page {
         margin: 0;
@@ -1134,20 +1239,34 @@ footer {
         }
     }
     .feedback {
-        overflow: visible;
         height: 100%;
     }
+    .feedback-text {
+        width: 70vw;
+    }
+    .feedback-text, .feedback-textarea  {
+        font-size: 5vmin;
+        text-align: center;
+    }
+    .feedback-info .title, .feedback-info .text {
+        font-size: 5vmin;
+    }
     #ff-compose {
-        float: none;
+        float: center;
         align-self: center;
         margin-top: 10vh;
-        width: 100vw;
+        width: 90vw;
+    }
+    #end-block p {
+        font-size: 2vmax;
     }
 }
 
-/* Открытие картинок на весь эклан */
+/* Открытие картинок на весь экран */
 .modal {
     position: fixed;
+    display: flex;
+    flex-direction: column;
     top: 0;
     left: 0;
     width: 100%;
@@ -1160,30 +1279,46 @@ footer {
     pointer-events: none; /* Отключаем клики, пока окно не видно */
     opacity: 0;
     transition: opacity 0.3s ease;
-  }
-
-  .modal.active {
+}
+.modal.active {
     opacity: 1;
     background: rgba(0, 0, 0, 0.9);
     pointer-events: auto; /* Включаем клики */
-  }
-
-  .modal-content {
+}
+.modal-content {
     max-width: 90%;
     max-height: 90vh;
     transform: scale(0.9);
     transition: transform 0.3s ease;
-  }
-
-  .modal.active .modal-content {
+}
+.modal.active .modal-content {
     transform: scale(1);
-  }
-
-  .close-btn {
+}
+.close-btn {
     position: absolute;
     top: 20px;
     right: 30px;
     color: white;
     font-size: 35px;
     cursor: pointer;
-  }
+}
+.image-caption {
+    position: relative;
+    bottom: -10px;
+    text-align: center;
+    color: white;
+    padding: 10px 20px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 1vmax;
+    font-size: 2rem;
+    max-width: 80%;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+.modal.active .image-caption {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Feedback Form */
