@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="feedback">
 <link rel="icon" type="image/x-icon" href="images/my/fav.avif">
-<img src="images/my/girl.avif" class="feedback-girl image click abs" onclick="openFullImage(this)" data-caption="Несбывшийся концепт персонажа из 2024">
+<img src="images/my/girl.avif" class="feedback-girl image click abs" style="z-index: -1;" onclick="openFullImage(this)"
+    data-caption="Несбывшийся концепт персонажа из 2024">
 <div class="feedback-blur abs"></div>
 <div class="feedback-shadow abs dsk"></div>
 
@@ -10,7 +11,7 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/style.css">
     <script type="text/javascript" src="script.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport">
     <meta name="color-scheme" content="dark">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,54 +33,48 @@
                 <a class="nav-button-5 nav-button-choosen rb" href="feedback.html">Feedback</a>
             </div>
         </div>
-        <a class="moon-container dsk" ><img class="moon click" src="icons/moon-w.svg" title="Луна прост"></a>
+        <a class="moon-container dsk"><img class="moon click" src="icons/moon-w.svg" title="Луна прост"></a>
     </header>
-    
-    <main class="feedback-container">
 
-        <div id="ff-compose"></div>
-        <script async defer src="https://formfacade.com/include/105954354891710067042/form/1FAIpQLScOsdIfJBPrk6qgLbnMIQfaOC7iL_CtN-UJWfKIso2OfyPAmQ/classic.js?div=ff-compose"></script>
+    <main>
 
-        <div style="display: flex; flex-direction: column; text-align: center; gap: 1vh;">
-            <p class="text titlelinks" style="margin: 0;">мои контакты</p>
-            <div class="links" style="margin: 0;">
-                <a href="https://t.me/anderoon"><img class="icon click" src="icons/telegram.svg"></a>
-                <a href="https://vk.com/anderoon"><img class="icon click" src="icons/VK.svg"></a>
+        <iframe name="hiddenConfirm" id="hiddenConfirm" style="display: none;"
+            onload="if(submitted){window.location='submitted.html';}"></iframe>
+        <form class="feedback-container"
+            action="https://docs.google.com/forms/d/e/1FAIpQLScOsdIfJBPrk6qgLbnMIQfaOC7iL_CtN-UJWfKIso2OfyPAmQ/formResponse"
+            method="post" target="hiddenConfirm" onsubmit="submitted=true">
+
+            <div class="feedback-info">
+                <h1 for="name" class="title" style="margin: 0;">Имя</h1>
+                <input class="feedback-text text rb" type="text" name="entry.262089730" placeholder="Кто вы" required>
+                <h1 for="Contact" class="title" style="margin: 0;">Связь</h1>
+                <input class="feedback-text text rb" type="text" name="entry.549324853" placeholder="Соц. сети / Почта"
+                    required>
             </div>
-        </div>
+
+            <h1 class="title" style="margin: 0;">Сообщение</h1>
+            <textarea class="rb text feedback-textarea" name="entry.333032420" maxlength="512"
+                placeholder="Напиши что-нибудь интересное, важное, смешное и т.д." required></textarea>
+
+            <button type="submit" class="infobutton blur rb title click">Отправить
+                <div class="infobuttonbg abs"></div>
+            </button>
+
+            <div style="display: flex; flex-direction: column; text-align: center; gap: 1vh;">
+                <p class="text titlelinks" style="margin: 0;">мои контакты</p>
+                <div class="links" style="margin: 0;">
+                    <a href="https://t.me/anderoon"><img class="icon click" src="icons/telegram.svg"></a>
+                    <a href="https://vk.com/anderoon"><img class="icon click" src="icons/VK.svg"></a>
+                </div>
+            </div>
+
+        </form>
 
     </main>
-    
-    <!--
-    <form class="feedback-container" action="" method="post" target="_blank">
-
-        <div class="feedback-info">
-            <h1 for="name" class="title" style="margin: 0;">Имя</h1>
-            <input class="feedback-text text rb" type="text" placeholder=" Кто вы">
-            <h1 for="Contact" class="title" style="margin: 0;">Связь</h1>
-            <input class="feedback-text text rb" type="text" placeholder=" Соц. сети / Почта">
-        </div>
-
-        <h1 class="title" style="margin: 0;">Сообщение</h1>
-        <textarea class="rb text feedback-textarea" name="Сообщение" id="" maxlength="512" placeholder=" Напиши что нибудь интересное (пока не работает)"></textarea>
-
-        <button class="infobutton blur rb title click">Отправить
-            <div class="infobuttonbg abs"></div>
-        </button>
-
-        <div style="display: flex; flex-direction: column; text-align: center; gap: 1vh;">
-            <p class="text titlelinks" style="margin: 0;">мои контакты</p>
-            <div class="links" style="margin: 0;">
-                <a href="https://t.me/anderoon"><img class="icon click" src="icons/telegram.svg"></a>
-                <a href="https://vk.com/anderoon"><img class="icon click" src="icons/VK.svg"></a>
-            </div>
-        </div>
-    </form>
-    -->
 </body>
 
 <!-- Open Full Images Container -->
- <div id="imageModal" class="modal" onclick="handleModalClick(event)">
+<div id="imageModal" class="modal" onclick="handleModalClick(event)">
     <span class="close-btn" onclick="closeModal()">&times;</span>
     <img class="modal-content rb" id="modalImage">
     <div class="image-caption title" id="imageCaption"></div>

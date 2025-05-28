@@ -57,20 +57,5 @@ document.addEventListener('touchend', function (e) {
 // Для корректной работы на iOS
 document.addEventListener('touchstart', function () { }, { passive: true });
 
-// Оптимизация загрузки iframe
-document.addEventListener('DOMContentLoaded', function () {
-  const iframe = document.querySelector('.form-iframe');
-
-  // Ленивая загрузка
-  iframe.setAttribute('loading', 'lazy');
-
-  // Ресайз iframe после загрузки
-  iframe.onload = function () {
-    this.style.height = this.contentWindow.document.body.scrollHeight + 'px';
-  };
-
-  // Ресайз при изменении окна
-  window.addEventListener('resize', function () {
-    iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
-  });
-});
+// Вывод сообщения об успешной отправке формы
+var submitted=false
