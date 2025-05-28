@@ -671,7 +671,11 @@ footer {
     font-size: 30px;
 }
 .reviews-frame .image {
-    height: 40vh;
+    background-image: url(../images/Virai.avif);
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
     &:hover {
         scale: 1.2;
         opacity: 0.8;
